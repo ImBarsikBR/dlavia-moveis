@@ -2,22 +2,88 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Comissão</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Configuração básica de estilo */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #59c3e6, #1da2d8);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        /* Container principal */
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 100%;
+            max-width: 350px;
+            box-sizing: border-box;
+        }
+
+        /* Tornando os inputs e botões responsivos */
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.4);
+            color: #000;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Título responsivo */
+        h2 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        /* Resultado */
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Responsividade para telas pequenas */
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 1.2em;
+            }
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+            input, button {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
 </head>
-<body style="margin: 0; font-family: 'Poppins', sans-serif; background: linear-gradient(to right, #59c3e6, #1da2d8); height: 100vh; display: flex; align-items: center; justify-content: center;">
-
-    <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); text-align: center; width: 350px;">
-        <h2 style="margin-top: 0; color: #333;">Calculadora de Comissão</h2>
+<body>
+    <div class="container">
+        <h2>Calculadora de Comissão</h2>
         
-        <input id="valorVenda" type="number" placeholder="Digite o valor da venda"
-            style="width: 100%; padding: 10px; margin: 15px 0; border: 1px solid #ccc; border-radius: 5px; background-color: rgba(255, 255, 255, 0.4); color: #000; font-family: 'Poppins', sans-serif;">
+        <input id="valorVenda" type="number" placeholder="Digite o valor da venda">
 
-        <button onclick="calcularComissao()" style="width: 100%; padding: 10px; background-color: #269ecb; color: white; border: none; border-radius: 5px; cursor: pointer; font-family: 'Poppins', sans-serif;">
+        <button onclick="calcularComissao()">
             Calcular Comissão
         </button>
 
-        <p id="resultado" style="margin-top: 20px; font-weight: bold; color: green; font-family: 'Poppins', sans-serif;"></p>
+        <p id="resultado"></p>
     </div>
 
     <script>
