@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Comissão</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0; font-family: 'Poppins', sans-serif; background: linear-gradient(to right, #59c3e6, #1da2d8); height: 100vh; display: flex; align-items: center; justify-content: center;">
+
+    <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); text-align: center; width: 350px;">
+        <h2 style="margin-top: 0; color: #333;">Calculadora de Comissão</h2>
+        
+        <input id="valorVenda" type="number" placeholder="Digite o valor da venda"
+            style="width: 100%; padding: 10px; margin: 15px 0; border: 1px solid #ccc; border-radius: 5px; background-color: rgba(255, 255, 255, 0.4); color: #000; font-family: 'Poppins', sans-serif;">
+
+        <button onclick="calcularComissao()" style="width: 100%; padding: 10px; background-color: #269ecb; color: white; border: none; border-radius: 5px; cursor: pointer; font-family: 'Poppins', sans-serif;">
+            Calcular Comissão
+        </button>
+
+        <p id="resultado" style="margin-top: 20px; font-weight: bold; color: green; font-family: 'Poppins', sans-serif;"></p>
+    </div>
+
+    <script>
+        function calcularComissao() {
+            const valor = parseFloat(document.getElementById("valorVenda").value);
+            if (!isNaN(valor)) {
+                const comissao = valor * 0.15;
+                document.getElementById("resultado").innerText = `Comissão: R$ ${comissao.toFixed(2)}`;
+            } else {
+                document.getElementById("resultado").innerText = "Digite um valor válido.";
+            }
+        }
+    </script>
+</body>
+</html> 
